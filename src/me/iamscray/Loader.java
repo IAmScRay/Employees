@@ -7,17 +7,13 @@ public class Loader {
 
         EmployeeService service = new EmployeeService(employees);
 
-        for(Employee e : service.getEmployees()) {
-            System.out.println(e);
-        }
-        System.out.println("Number of employees: " + service.getEmployees().length + "\n");
+        service.printEmployees();
+        System.out.println("Number of employees: " + service.getEmployees().length);
 
         service.addEmployee(new Employee(20L, "Pasha", "Male", 20, 15000D, 5, 100));
 
-        for(Employee e : service.getEmployees()) {
-            System.out.println(e);
-        }
-        System.out.println("Number of employees (after adding one employee): " + service.getEmployees().length + "\n");
+        service.printEmployees();
+        System.out.println("Number of employees (after adding one employee): " + service.getEmployees().length);
 
         Employee firedEmployee = service.removeEmployee(20L);
         if(firedEmployee != null) {
@@ -26,9 +22,7 @@ public class Loader {
             System.out.println("No employee was found & fired!");
         }
 
-        for(Employee e : service.getEmployees()) {
-            System.out.println(e);
-        }
-        System.out.println("Number of employees (after firing one): " + service.getEmployees().length + "\n");
+        service.printEmployees();
+        System.out.println("Number of employees (after firing one): " + service.getEmployees().length);
     }
 }

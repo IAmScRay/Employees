@@ -40,6 +40,13 @@ public class EmployeeService {
         return null;
     }
 
+    public void printEmployees() {
+        for(Employee e : employees) {
+            System.out.println(e);
+        }
+        System.out.print("\n");
+    }
+
     public double calculateSalaryAndBonus() {
         double result = 0;
 
