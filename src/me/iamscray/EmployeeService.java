@@ -94,4 +94,24 @@ public class EmployeeService {
         return result;
     }
 
+    public Employee editEmployee(Employee newE) {
+        int index = -1;
+
+        for(int i = 0; i < employees.length; i++) {
+            if(employees[i].getID() == newE.getID()) {
+                index = i;
+                break;
+            }
+        }
+
+        if(index == -1) {
+            return null;
+        }
+
+        Employee oldE = employees[index];
+        employees[index] = newE;
+
+        return oldE;
+    }
+
 }
